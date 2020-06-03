@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native'
 
 const Cor_1 = '#57de84';
 const Cor_2 = '#fff';
-const Cor_3 = '#57de84';
+const Cor_3 = '#9d9d9d';
 const Cor_4 = '#000';
 const Cor_5 = '#57de84';
 
