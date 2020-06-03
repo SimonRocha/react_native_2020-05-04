@@ -15,13 +15,30 @@ export default class Conversas extends React.Component {
         contact_name: 'Simon',
         contact_last_massage: 'Asd oasdpa [asdpoa poasd.',
         contact_last_message_date: '12 abr 2020'
+      },
+      { 
+        id: 2,
+        contact_image_url: '',
+        contact_name: 'Simon',
+        contact_last_massage: 'Asd oasdpa [asdpoa poasd.',
+        contact_last_message_date: '12 abr 2020'
       }
     ]
   }
 
   itemList = ({item}) => {
     return (
-      <View><Text>{item.contact_name}</Text></View>
+      <View style={[SD.ROW, {justifyContent: "space-between", padding: 10, alignItems: "center"}]}>
+        <Image style={[{width: 30, height: 30, borderRadius: 30}]} source={require('../asstes/images/logo_small.png')}></Image>
+        <View style={[SD.COLUMN]}>
+          <View style={[SD.ROW]}>
+            <Text>Titulo</Text>
+            <Text>Data</Text>
+          </View>
+          <Text>Mensagem</Text>
+        </View>
+        <Text>></Text>
+      </View>
     )
   }
 
