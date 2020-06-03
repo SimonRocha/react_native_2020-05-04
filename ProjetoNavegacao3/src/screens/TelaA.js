@@ -15,7 +15,7 @@ export default class Home extends React.Component {
         <Button
           title="Home"
           onPress={() =>
-            this.props.navigation.navigate('Home', { name: 'joao'})
+            this.props.navigation.navigate('TelaHome')
           }
         />
         </View>
