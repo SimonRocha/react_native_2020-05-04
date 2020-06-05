@@ -6,8 +6,12 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import Login from './screens/Login';
 import Conversas from './screens/Conversas';
 import NovaConversa from './screens/NovaConversa';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'; 
+import AntDesign from 'react-native-vector-icons/AntDesign'; 
 
+import { stylesDefault, Cor_1 } from './asstes/styles/default'
 
+const SD = stylesDefault;
 
 const Stack = createStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
@@ -18,10 +22,39 @@ export default function AppNavigator() {
 
   tabNavigator = () => {
     return  (
-    <Tab.Navigator>
-      <Tab.Screen name="Conversas1" component={Conversas} />
-      <Tab.Screen name="Conversas2" component={Conversas} />
-      <Tab.Screen name="Conversas3 " component={Conversas} />
+    <Tab.Navigator activeColor={'#fff'}>
+      <Tab.Screen name="Conversas1" component={Conversas} 
+      options={{
+        tabBarLabel: 'Home',
+        tabBarColor: Cor_1,
+        tabBarIcon: ({ color }) => (
+          <MaterialCommunityIcons name="home" color={color} size={26} />
+        ),
+      }} />
+      <Tab.Screen name="Conversas2" component={Conversas} 
+      options={{
+        tabBarLabel: 'Home',
+        tabBarColor: Cor_1,
+        tabBarIcon: ({ color }) => (
+          <AntDesign name="left" color={color} size={26} />
+        ),
+      }} />
+      <Tab.Screen name="Conversas3 " component={Conversas} 
+      options={{
+        tabBarLabel: 'Home',
+        tabBarColor: Cor_1,
+        tabBarIcon: ({ color }) => (
+          <MaterialCommunityIcons name="home" color={color} size={26} />
+        ),
+      }} />
+      <Tab.Screen name="Conversas4 " component={Conversas} options={{
+        tabBarLabel: 'Home',
+        tabBarColor: Cor_1,
+        tabBarIcon: ({ color }) => (
+          <MaterialCommunityIcons name="home" color={color} size={26} />
+        ),
+      }} />
+
     </Tab.Navigator>)
   }
 

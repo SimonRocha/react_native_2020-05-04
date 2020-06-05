@@ -1,10 +1,10 @@
 import { StyleSheet } from 'react-native'
 
-const Cor_1 = '#57de84';
-const Cor_2 = '#fff';
-const Cor_3 = '#9d9d9d';
-const Cor_4 = '#000';
-const Cor_5 = '#57de84';
+export const Cor_1 = '#57de84';
+export const Cor_2 = '#fff';
+export const Cor_3 = '#9d9d9d';
+export const Cor_4 = '#000';
+export const Cor_5 = '#57de84';
 
 const stylesDefault = StyleSheet.create({
     ROW: {
