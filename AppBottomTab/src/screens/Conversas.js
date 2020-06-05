@@ -29,15 +29,15 @@ export default class Conversas extends React.Component {
   itemList = ({item}) => {
     return (
       <View style={[SD.ROW, {justifyContent: "space-between", padding: 10, alignItems: "center"}]}>
-        <Image style={[{width: 30, height: 30, borderRadius: 30}]} source={require('../asstes/images/logo_small.png')}></Image>
-        <View style={[SD.COLUMN]}>
-          <View style={[SD.ROW]}>
-            <Text>Titulo</Text>
-            <Text>Data</Text>
+        <Image style={[{width: 50, height: 50, borderRadius: 30}]} source={require('../asstes/images/logo_small.png')}></Image>
+        <View style={[SD.COLUMN, {flex: 1, padding: 10}]}>
+          <View style={[SD.ROW, {justifyContent: "space-between"}]}>
+            <Text style={[SD.tx_Cor_4, {fontSize: 18, fontWeight: 'bold'}]}>Jorge Jesus</Text>
+            <Text style={[SD.tx_Cor_3, {fontSize: 12, marginRight: 10}]}>12/12/2019</Text>
           </View>
-          <Text>Mensagem</Text>
+          <Text style={[SD.tx_Cor_4, {marginTop: 5, fontSize: 15}]}>Mensagem bacana, super incrivel.</Text>
         </View>
-        <Text>></Text>
+        <Text style={[SD.tx_Cor_3, {fontSize: 22}]}>></Text>
       </View>
     )
   }
