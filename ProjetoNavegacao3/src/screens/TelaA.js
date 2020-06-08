@@ -1,10 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
+import { Container } from 'native-base'
 
 export default class Home extends React.Component {
   render() {
 
     return (
+      <Container>
         <View>
         <Button
           title="Tela B"
@@ -19,7 +21,7 @@ export default class Home extends React.Component {
           }
         />
         </View>
-
+        </Container>
     );
   }
 }

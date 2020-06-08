@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, Image, Dimensions, TextInput, FlatList, TouchableOpacity } from 'react-native';
 
-import { stylesDefault } from '../asstes/styles/default'
+import { stylesDefault, alterarPaleta } from '../asstes/styles/default'
 
 const SD = stylesDefault;
 const width = Dimensions.get('window').width
@@ -28,6 +28,7 @@ export default class NovaConversa extends React.Component {
 
   itemList = ({item}) => {
     return (
+      <TouchableOpacity onPress={() => {alterarPaleta(2, this)}}>
       <View style={[SD.ROW, {justifyContent: "space-between", padding: 10, alignItems: "center"}]}>
         <Image style={[{width: 50, height: 50, borderRadius: 30}]} source={require('../asstes/images/logo_small.png')}></Image>
         <View style={[SD.COLUMN, {flex: 1, padding: 10}]}>
@@ -38,6 +39,7 @@ export default class NovaConversa extends React.Component {
         </View>
         <Text style={[SD.tx_Cor_3, {fontSize: 22}]}>></Text>
       </View>
+      </TouchableOpacity>
     )
   }
 

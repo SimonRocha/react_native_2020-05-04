@@ -1,10 +1,21 @@
 import { StyleSheet } from 'react-native'
 
-export const Cor_1 = '#57de84';
-export const Cor_2 = '#fff';
-export const Cor_3 = '#9d9d9d';
-export const Cor_4 = '#000';
-export const Cor_5 = '#57de84';
+var paleta = 1;
+export function alterarPaleta(valor, context) {
+    debugger
+    paleta = valor
+    context.setState({paleta})
+}
+export var Cor_1 = (paleta_selecionada) => { 
+    if (paleta_selecionada == 2) {
+        return '#f5f'
+    }
+    return '#57de84'
+};
+export var Cor_2 = '#fff';
+export var Cor_3 = '#9d9d9d';
+export var Cor_4 = '#000';
+export var Cor_5 = '#57de84';
 
 const stylesDefault = StyleSheet.create({
     ROW: {
@@ -14,13 +25,13 @@ const stylesDefault = StyleSheet.create({
         flexDirection: 'column'
     },
     bg_Cor_1: {
-        backgroundColor: Cor_1
+        backgroundColor: Cor_1(paleta)
     },
     tx_Cor_1: {
-        color: Cor_1
+        color: Cor_1(paleta)
     },
     bd_Cor_1: {
-        borderColor: Cor_1
+        borderColor: Cor_1(paleta)
     },
 
     bg_Cor_2: {
