@@ -1,10 +1,22 @@
 import React from 'react';
 
-import { Container, Header, Content, Footer, Left, Body, Right, Text, Button, Icon, Title, FooterTab, StyleProvider, Root } from 'native-base'
+import { ScrollView } from 'react-native'
+import { Container, Header, Content, Footer, Left, Body, Right, Text, Button, Icon, Title, FooterTab, StyleProvider, Root, Accordion } from 'native-base'
+import getTheme from '../../native-base-theme/components';
+import variables from '../../native-base-theme/variables/commonColor';
+
+const dataArray = [
+    { title: "First Element", content: "Lorem ipsum dolor sit amet" },
+    { title: "Second Element", content: "Lorem ipsum dolor sit amet" },
+    { title: "Third Element", content: "Lorem ipsum dolor sit amet" },
+    { title: "Third Element", content: "Lorem ipsum dolor sit amet" },
+
+  ];
 
 export default class Tela2 extends React.Component {
     render() {
         return(
+            <StyleProvider style={getTheme(variables)}>
             <Container>
             <Header>
                 <Left>
@@ -22,6 +34,7 @@ export default class Tela2 extends React.Component {
 
             <Content padder>
                 <Text>Texto qualquer</Text>
+                <Accordion dataArray={dataArray} expanded={0}/>
             </Content>
 
             <Footer>
@@ -44,6 +57,7 @@ export default class Tela2 extends React.Component {
                 </FooterTab>
             </Footer>
             </Container>
+            </StyleProvider>
         )
     }
 }

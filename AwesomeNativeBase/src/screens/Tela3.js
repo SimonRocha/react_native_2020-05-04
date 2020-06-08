@@ -1,6 +1,21 @@
 import React from 'react';
 
-import { Container, Header, Content, Footer, Left, Body, Right, Text, Button, Icon, Title, FooterTab, StyleProvider, Root } from 'native-base'
+import { Image } from 'react-native'
+import { DeckSwiper, View, Container, Header, Content, Footer, Left, Body, Right, Text, Button, Icon, Title, FooterTab, StyleProvider, Root, Card, CardItem, Thumbnail } from 'native-base'
+
+const cards = [
+    {
+      text: 'Card One',
+      name: 'One',
+      image: require('../asstes/images/cat.png'),
+    },
+    {
+        text: 'Card Two',
+        name: 'Two',
+        image: require('../asstes/images/cat.png'),
+      },
+  ];
+
 
 export default class Tela3 extends React.Component {
     render() {
@@ -20,29 +35,35 @@ export default class Tela3 extends React.Component {
                 <Right/>
             </Header>
 
-            <Content padder>
-                <Text>Texto qualquer</Text>
-            </Content>
+            <View>
+                <DeckSwiper
+                    dataSource={cards}
+                    renderItem={item =>
+                    <Card style={{ elevation: 3 }}>
+                        <CardItem>
+                            <Left>
+                                <Thumbnail source={item.image} />
+                                <Body>
+                                    <Text>{item.text}</Text>
+                                    <Text note>NativeBase</Text>
+                                </Body>
+                            </Left>
+                        </CardItem>
+                        
+                        <CardItem cardBody>
+                            <Image style={{ height: 300, flex: 1 }} source={item.image} />
+                        </CardItem>
+                        
+                        <CardItem>
+                            <Icon name="heart" style={{ color: '#ED4A6A' }} />
+                            <Text>{item.name}</Text>
+                        </CardItem>
+                    </Card>
+                    }
+                />
+            </View>
 
-            <Footer>
-                <FooterTab>
-                <Button onPress={() => this.props.navigation.navigate('Tela1')} full>
-                    <Text>Tela 1</Text>
-                </Button>
-                </FooterTab>
-
-                <FooterTab>
-                <Button onPress={() => this.props.navigation.navigate('Tela2')} full>
-                    <Text>Tela 2</Text>
-                </Button>
-                </FooterTab>
-
-                <FooterTab>
-                <Button onPress={() => this.props.navigation.navigate('Tela3')} full>
-                    <Text>Tela 3</Text>
-                </Button>
-                </FooterTab>
-            </Footer>
+            
             </Container>
         )
     }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container, Header, Content, Footer, Left, Body, Right, Text, Button, Icon, Title, FooterTab, StyleProvider, Root } from 'native-base'
+import { Container, Header, Content, Footer, Left, Body, Right, Text, Button, Icon, Title, FooterTab, StyleProvider, Root, Spinner } from 'native-base'
 import getTheme from '../../native-base-theme/components';
 import variables from '../../native-base-theme/variables/variables-1';
 
@@ -26,6 +26,10 @@ export default class Tela1 extends React.Component {
 
             <Content padder>
                 <Text>Texto qualquer</Text>
+                <Spinner />
+                <Spinner color='red' />
+                <Spinner color='green' />
+                <Spinner color='blue' />
             </Content>
 
             <Footer>
