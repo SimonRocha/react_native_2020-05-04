@@ -14,7 +14,7 @@ export default class Tela3 extends React.Component {
                 </Left>
 
                 <Body>
-                <Title>Header</Title>
+                <Title>Tela 3</Title>
                 </Body>
 
                 <Right/>

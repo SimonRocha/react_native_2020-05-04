@@ -1,10 +1,14 @@
 import React from 'react';
 
 import { Container, Header, Content, Footer, Left, Body, Right, Text, Button, Icon, Title, FooterTab, StyleProvider, Root } from 'native-base'
+import getTheme from '../../native-base-theme/components';
+import variables from '../../native-base-theme/variables/variables-1';
+
 
 export default class Tela1 extends React.Component {
     render() {
         return(
+            <StyleProvider style={getTheme(variables)}>
             <Container>
             <Header>
                 <Left>
@@ -14,7 +18,7 @@ export default class Tela1 extends React.Component {
                 </Left>
 
                 <Body>
-                <Title>Header</Title>
+                <Title>Tela 1</Title>
                 </Body>
 
                 <Right/>
@@ -44,6 +48,7 @@ export default class Tela1 extends React.Component {
                 </FooterTab>
             </Footer>
             </Container>
+            </StyleProvider>
         )
     }
 }

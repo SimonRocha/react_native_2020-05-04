@@ -14,7 +14,7 @@ export default class Tela2 extends React.Component {
                 </Left>
 
                 <Body>
-                <Title>Header</Title>
+                <Title>Tela 2</Title>
                 </Body>
 
                 <Right/>
