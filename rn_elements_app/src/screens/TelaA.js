@@ -1,18 +1,32 @@
 import React from 'react';
 import { View } from 'react-native'
-import { Button } from 'react-native-elements'
+import { ButtonGroup, Text } from 'react-native-elements'
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class TelaA extends React.Component {
+    state = {
+        index: 1
+    }
+
     render() {
         return(
-            <Button
-                buttonStyle={{ backgroundColor: '#000' }}
-                icon={ <Icon name="arrow-right" size={15} color="white"/> }
-                title="Tela B"
-                onPress={() => this.props.navigation.navigate('TelaB')}
+            <View>
+            <ButtonGroup
+                onPress={(index) => this.setState({index})}
+                selectedIndex={this.state.index}
+                buttons={['Botao1','Botao2','Botao3']}
+                containerStyle={{height: 100}}
             />
-
+            {
+                this.state.index == 1 ?
+                <Text>Tela1</Text>
+            :
+                this.state.index == 2 ?
+                <Text>Tela2</Text>
+            :
+                <Text>Tela3</Text>
+            }
+            </View>
         )
     }
 }

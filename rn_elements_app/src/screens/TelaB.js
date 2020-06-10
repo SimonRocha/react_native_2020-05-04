@@ -1,17 +1,39 @@
 import React from 'react';
 import { View } from 'react-native'
-import { Button } from 'react-native-elements'
+import { Card, Image, Text  } from 'react-native-elements'
 import Icon from 'react-native-vector-icons/FontAwesome';
+
+
+const users = [
+    {
+       name: 'brynn1',
+       avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg'
+    },
+    {
+        name: 'brynn2',
+        avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg'
+     },
+   ]
 
 export default class TelaB extends React.Component {
     render() {
         return(
-            <Button
-                buttonStyle={{ backgroundColor: '#000' }}
-                icon={ <Icon name="arrow-right" size={15} color="white"/> }
-                title="Tela C"
-                onPress={() => this.props.navigation.navigate('TelaC')}
-            />
+            <Card title="CARD WITH DIVIDER">
+            {
+                users.map((u, i) => {
+                return (
+                    <View key={i}>
+                        <Image
+                            style={{height: 30, width: 30}}
+                            resizeMode="cover"
+                            source={{ uri: u.avatar }}
+                        />
+                        <Text>{u.name}</Text>
+                    </View>
+                );
+                })
+            }
+            </Card>
         )
     }
 }
