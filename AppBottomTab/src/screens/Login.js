@@ -17,7 +17,7 @@ export default class Login extends React.Component {
           </View> 
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('Conversas')}>
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('Teste')}>
           <View style={[SD.bg_Cor_1, SD.bd_Cor_2, {padding: 10, width: 175, borderWidth: 1, marginTop: 10}]}>
             <Text style={[SD.tx_Cor_2, {fontSize: 16, fontWeight: "bold", textAlign: 'center'}]}>Login</Text>
           </View> 

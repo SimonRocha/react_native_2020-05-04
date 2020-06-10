@@ -6,6 +6,7 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import Login from './screens/Login';
 import Conversas from './screens/Conversas';
 import NovaConversa from './screens/NovaConversa';
+import Teste from './screens/Teste';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'; 
 import AntDesign from 'react-native-vector-icons/AntDesign'; 
 
@@ -67,6 +68,8 @@ export default function AppNavigator() {
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Conversas" component={this.tabNavigator} />
       <Stack.Screen name="NovaConversa" component={NovaConversa} />
+      <Stack.Screen name="Teste" component={Teste} />
+
     </Stack.Navigator>
   );
 }
