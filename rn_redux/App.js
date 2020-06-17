@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Button, Text } from 'react-native';
 import { connect } from 'react-redux';
-import { changeCount } from './src/actions/counts';
+import { addCount, removeCount } from './src/actions/counts';
 import { bindActionCreators } from 'redux';
 
 
 class App extends Component {
   decrementCount() {
     let { count, actions } = this.props;
-    count--;
-    actions.changeCount(count);
+    actions.removeCount(count);
   }
 
   incrementCount() {
     let { count, actions } = this.props;
-    count++;
-    actions.changeCount(count);
+    actions.addCount(count);
   }
 
   render() {
@@ -49,8 +47,8 @@ const mapStateToProps = state => ({
   });
 
 const ActionCreators = Object.assign(
-  {},
-  {changeCount},
+  {removeCount},
+  {addCount},
 );
 const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators(ActionCreators, dispatch),
