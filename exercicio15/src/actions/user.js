@@ -6,7 +6,7 @@ export async function listUsers() {
     let retorno_json = await retorno.json();
 
     return {
-        type: COUNTER_CHANGE,
+        type: LIST_USERS,
         payload: retorno_json
     }
 }

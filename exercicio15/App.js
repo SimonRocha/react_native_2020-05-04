@@ -7,11 +7,11 @@
  */
 
 import React from 'react';
+import ListarUsuarios from './src/screens/ListarUsuarios'
 
 const App: () => React$Node = () => {
   return (
-    <>
-    </>
+    <ListarUsuarios/>
   );
 };
 
