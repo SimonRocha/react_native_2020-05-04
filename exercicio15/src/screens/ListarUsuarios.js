@@ -1,6 +1,6 @@
 import React from 'react';
-import { View } from 'react-native'
-import { ButtonGroup, Text } from 'react-native-elements'
+import { View, ScrollView } from 'react-native'
+import { Card, Text, Image } from 'react-native-elements'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { listUsers } from '../actions/user';
 
@@ -8,23 +8,48 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 
-
-
 class ListarUsuarios extends React.Component {
-    state = {
-        index: 1
+    componentDidMount() {
+        this.props.actions.listUsers();
     }
+
+
+
+
     render() {
         return(
+            <ScrollView>
             <View>
-            <ButtonGroup
-                onPress={(index) => this.setState({index})}
-                selectedIndex={this.state.index}
-                buttons={['Botao1','Botao2','Botao3']}
-                containerStyle={{height: 100}}
-            />
-          
+                {this.props.users ? this.props.users.map(u => {
+                    return (
+                        <Card title={u.first_name}>
+                            <View style={{flexDirection: "row"}}>
+                                <Image
+                                    style={{width: 100, height: 100, borderRadius: 30}}
+                                    resizeMode="cover"
+                                    source={{ uri: u.avatar }}
+                                />  
+                                <View style={{marginLeft: 20, paddingTop: 10}}>
+                                    <View style={{flexDirection: "row"}}>   
+                                        <Text>Sobrenome: </Text>
+                                        <Text>{u.last_name}</Text>
+                                    </View>
+                                    <View style={{flexDirection: "row"}}>   
+                                        <Text>Email: </Text>
+                                        <Text>{u.email}</Text>
+                                    </View>
+                                    <View style={{flexDirection: "row"}}>   
+                                        <Text>Código: </Text>
+                                        <Text>{u.id}</Text>
+                                    </View>
+                                </View>
+                            </View>
+                        </Card> 
+                    )
+                    })
+                :null}
             </View>
+            </ScrollView>
         )
     }
 }

@@ -1,7 +1,9 @@
 import { LIST_USERS } from '../constants'
 
 const initialState = {
-    user_state: {}
+    user_state: {
+        users: []
+    }
 }
 
 const userReducer = (state = initialState, action) => {
@@ -9,6 +11,7 @@ const userReducer = (state = initialState, action) => {
         case LIST_USERS:
             return {
                 ...state,
+                users: action.payload.data
             }
         default: 
             return state
