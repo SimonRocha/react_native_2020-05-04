@@ -1,4 +1,4 @@
-import { LIST_USERS } from '../constants'
+import { LIST_USERS, GET_USER } from '../constants'
 
 
 export async function listUsers() {
@@ -16,7 +16,7 @@ export async function getUser(id) {
     let retorno_json = await retorno.json();
 
     return {
-        type: LIST_USERS,
+        type: GET_USER,
         payload: retorno_json
     }
 }

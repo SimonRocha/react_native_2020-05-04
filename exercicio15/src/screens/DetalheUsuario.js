@@ -8,7 +8,9 @@ import { bindActionCreators } from 'redux';
 
 class DetalheUsuario extends React.Component {
     componentDidMount() {
-        let user_id = 0;
+        debugger;
+        const user_id = this.props.route.params.user_id;
+        debugger;
         this.props.actions.getUser(user_id)
     }
 
