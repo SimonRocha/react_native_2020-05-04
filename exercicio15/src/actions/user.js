@@ -10,3 +10,13 @@ export async function listUsers() {
         payload: retorno_json
     }
 }
+
+export async function getUser(id) {
+    let retorno = await fetch("https://reqres.in/api/users/"+id, { method: 'GET'});
+    let retorno_json = await retorno.json();
+
+    return {
+        type: LIST_USERS,
+        payload: retorno_json
+    }
+}

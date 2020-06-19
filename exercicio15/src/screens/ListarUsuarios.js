@@ -1,7 +1,6 @@
 import React from 'react';
-import { View, ScrollView } from 'react-native'
+import { View, ScrollView, TouchableOpacity } from 'react-native'
 import { Card, Text, Image } from 'react-native-elements'
-import Icon from 'react-native-vector-icons/FontAwesome';
 import { listUsers } from '../actions/user';
 
 import { connect } from 'react-redux';
@@ -14,15 +13,14 @@ class ListarUsuarios extends React.Component {
     }
 
 
-
-
     render() {
         return(
             <ScrollView>
             <View>
                 {this.props.users ? this.props.users.map(u => {
                     return (
-                        <Card title={u.first_name}>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate("Detalhe do usuário", { user_id: u.id})}>
+                        <Card   title={u.first_name}>
                             <View style={{flexDirection: "row"}}>
                                 <Image
                                     style={{width: 100, height: 100, borderRadius: 30}}
@@ -45,6 +43,7 @@ class ListarUsuarios extends React.Component {
                                 </View>
                             </View>
                         </Card> 
+                        </TouchableOpacity>
                     )
                     })
                 :null}
