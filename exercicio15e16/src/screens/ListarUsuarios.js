@@ -21,7 +21,7 @@ class ListarUsuarios extends React.Component {
             <View>
                 {this.props.users ? this.props.users.map(u => {
                     return (
-                        <TouchableOpacity onPress={() => navigation.navigate("Detalhe do usuário", { user_id: u.id})}>
+                        <TouchableOpacity onPress={() => navigation.navigate("Chat", { user_id: u.id})}>
                         <Card   title={u.first_name}>
                             <View style={{flexDirection: "row"}}>
                                 <Image
